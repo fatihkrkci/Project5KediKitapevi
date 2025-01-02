@@ -1,9 +1,13 @@
+using DataAccessLayer.Context;
+using EntityLayer.Concrete;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddHttpClient();
-
+builder.Services.AddDbContext<Project5KediKitabeviContext>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Project5KediKitabeviContext>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -21,7 +25,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",
