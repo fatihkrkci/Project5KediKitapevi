@@ -1,0 +1,37 @@
+﻿@model List<ResultFeatureDto>
+
+
+<section id="billboard">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <button class="prev slick-arrow">
+                    <i class="icon icon-arrow-left"></i>
+                </button>
+
+                <div class="main-slider pattern-overlay">
+                    @foreach (var item in Model)
+                    {
+                        <div class="slider-item">
+                            <div class="banner-content">
+                                <h2 class="banner-title">@item.BookName</h2>
+                                <p>
+                                    @item.Description
+                                </p>
+                            </div>
+                            <img src="@item.ImageUrl" alt="banner" class="banner-image">
+                        </div>
+                    }
+                </div>
+
+                <button class="next slick-arrow">
+                    <i class="icon icon-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
