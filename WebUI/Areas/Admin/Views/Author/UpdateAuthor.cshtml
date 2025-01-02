@@ -1,0 +1,47 @@
+﻿@model UpdateAuthorDto
+
+@{
+    ViewData["Title"] = "UpdateAuthor";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">Yazar Bilgilerini Güncelle</div>
+    </div>
+    <form method="post">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="email2">Yazar Adı</label>
+                        <input type="hidden" asp-for="AuthorId"/>
+                        <input asp-for="FirstName" type="text" class="form-control" id="email2" placeholder="Yazarın Adı">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="email2">Yazar Soyadı</label>
+                        <input asp-for="LastName" type="text" class="form-control" id="email2" placeholder="Yazarın Soyadı">
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <label for="email2">Yazar Görseli</label>
+                        <input asp-for="ImageUrl" type="text" class="form-control" id="email2" placeholder="Yazarın Görseli">
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <label for="comment">Yazar Hakkında</label>
+                        <textarea asp-for="About" class="form-control" id="comment" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-action">
+            <button class="btn btn-success">Kaydet</button>
+            <button class="btn btn-danger">Vazgeç</button>
+        </div>
+    </form>
+</div>
