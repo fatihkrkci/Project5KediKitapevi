@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EntityLayer.Concrete;
 
-namespace EntityLayer.Concrete
+namespace WebUI.Dtos
 {
-    public class Book
+    public class ResultBookDto
     {
         public int BookId { get; set; }
         public string BookName { get; set; }
@@ -14,8 +10,8 @@ namespace EntityLayer.Concrete
         public int PageCount { get; set; }
         public string ImageUrl { get; set; }
         public int AuthorId { get; set; }
-        public Author? Author { get; set; }
+        public Author Author { get; set; }
         public int CategoryId { get; set; }
-        public Category? Category { get; set; }
+        public Category Category { get; set; }
     }
 }

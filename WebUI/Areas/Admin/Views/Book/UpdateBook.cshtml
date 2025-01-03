@@ -1,0 +1,59 @@
+﻿@model UpdateBookDto
+
+@{
+    ViewData["Title"] = "CreateBook";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">Yeni Kitap Ekle</div>
+    </div>
+    <form method="post">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="bookName">Kitap Adı</label>
+                        <input type="hidden" asp-for="BookId"/>
+                        <input asp-for="BookName" type="text" class="form-control" id="bookName" placeholder="Kitabın Adı">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="price">Fiyatı</label>
+                        <input asp-for="Price" type="text" class="form-control" id="price" placeholder="Kitabın Satış Fiyatı">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="pageCount">Sayfa Sayısı</label>
+                        <input asp-for="PageCount" type="text" class="form-control" id="pageCount" placeholder="Toplam Sayfa Sayısı">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="imageUrl">Kitap Görseli</label>
+                        <input asp-for="ImageUrl" type="text" class="form-control" id="imageUrl" placeholder="Kitabın Kapak Görseli">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="authorId">Yazar</label>
+                        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.Categories, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="categoryId">Kategori</label>
+                        @Html.DropDownListFor(x => x.AuthorId, (List<SelectListItem>)ViewBag.Authors, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-action">
+            <button class="btn btn-success">Kaydet</button>
+            <button class="btn btn-danger">Vazgeç</button>
+        </div>
+    </form>
+</div>
